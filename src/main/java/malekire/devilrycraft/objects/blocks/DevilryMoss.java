@@ -76,13 +76,16 @@ public class DevilryMoss extends GrassBlock {
             if (!canSurvive(state, world, pos)) {
                 world.setBlockState(pos, Blocks.DIRT.getDefaultState());
             } else {
-                if (world.getLightLevel(pos.up()) >= 9) {
-                    BlockState blockState = this.getDefaultState();
+                if (this.conversionState.computeHashCode() == 0) {
 
-                    for (int i = 0; i < 4; ++i) {
-                        BlockPos blockPos = pos.add(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
-                        if (world.getBlockState(blockPos).isOf(Blocks.DIRT) || world.getBlockState(blockPos).isOf(Blocks.GRASS_BLOCK) && canSpread(blockState, world, blockPos) && this.conversionState.computeHashCode() == 0 && !(world.getBlockState(blockPos).isOf(DevilryBlocks.SILVER_MOSS))) {
-                            world.setBlockState(blockPos, (BlockState) blockState.with(conversionState, 2));
+                    if (world.getLightLevel(pos.up()) >= 9) {
+                        BlockState blockState = this.getDefaultState();
+
+                        for (int i = 0; i < 4; ++i) {
+                            BlockPos blockPos = pos.add(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
+                            if (world.getBlockState(blockPos).isOf(Blocks.DIRT) || world.getBlockState(blockPos).isOf(Blocks.GRASS_BLOCK) && canSpread(blockState, world, blockPos)) {
+                                world.setBlockState(blockPos, (BlockState) blockState.with(conversionState, 2));
+                            }
                         }
                     }
                 }
