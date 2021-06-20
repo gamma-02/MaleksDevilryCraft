@@ -97,7 +97,7 @@ public class Devilrycraft implements ModInitializer, ClientModInitializer {
     public static <FC extends FeatureConfig, F extends Feature<FC>, CF extends ConfiguredFeature<FC, F>> CF createConfiguredFeature(String id, CF configuredFeature) {
 
 
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, id, configuredFeature);//please do something better later, gamma. - null | fuck you null. you are so fucking stupid that I cant even. spent so fucking much time im not fucking doing shit to this fucking function if it fucking works
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, id, configuredFeature);//please do something better later, gamma. - null | I hate you null. you are so stupid that I cant even. spent so much time im not doing anything to this function if it works
         return configuredFeature;
     }
 
