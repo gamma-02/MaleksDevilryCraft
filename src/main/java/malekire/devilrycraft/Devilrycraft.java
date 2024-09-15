@@ -15,6 +15,8 @@ import malekire.devilrycraft.generation.tree_generation.SilverwoodTreeGeneration
 import malekire.devilrycraft.objects.blocks.SilverwoodSaplingGenerator;
 import malekire.devilrycraft.objects.entities.SlimeZombieEntity;
 
+import malekire.devilrycraft.common.DevilryFluids;
+
 import malekire.devilrycraft.objects.particles.JavaCup;
 import net.fabricmc.api.ClientModInitializer;
 
@@ -54,7 +56,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
+
 import static malekire.devilrycraft.common.generation.DevilryOreGeneration.*;
+
 import static malekire.devilrycraft.common.generation.DevilryTreeGeneration.*;
 import static malekire.devilrycraft.util.render.DRenderUtil.interpolatePositionsThroughTime;
 
@@ -146,6 +150,7 @@ public class Devilrycraft implements ModInitializer, ClientModInitializer {
                         context -> {
                             context.getGenerationSettings().addBuiltInStructure(DevilryConfiguredStructures.CONFIGURED_VIS_GEODE);
                         });
+
 
 
 
